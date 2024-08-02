@@ -20,6 +20,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\core\OtaghakChallenge.Application\OtaghakChallenge.Application.csproj" />
     <ProjectReference Include="..\..\infrastructure\OtaghakChallenge.Persistence\OtaghakChallenge.Persistence.csproj" />
   </ItemGroup>
 
