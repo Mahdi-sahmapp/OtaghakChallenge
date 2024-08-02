@@ -9,7 +9,7 @@ namespace OtaghakChallenge.Persistence.ApplicationDbContext
         DbSet<Product> Products {  get; set; }
         DbSet<User> Users {  get; set; }
         DbSet<Role> Roles {  get; set; }
-        DbSet<RolePermission> RolePermissions { get; set; }
+        DbSet<UserRole> RolePermissions { get; set; }
         
 
 

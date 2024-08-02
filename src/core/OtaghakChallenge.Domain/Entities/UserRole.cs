@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace OtaghakChallenge.Domain.Entities
 {
-    public class RolePermission:BaseEntity
+    public class UserRole:BaseEntity
     {
         [ForeignKey("User")]
         public int UserId { get; set; }
