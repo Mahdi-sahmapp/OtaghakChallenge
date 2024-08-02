@@ -6,10 +6,8 @@ using System.Threading.Tasks;
 
 namespace OtaghakChallenge.Application.Interfaces
 {
-    public interface ICurrentUser
+    public interface ISmsServices
     {
-        public long UserId { get;}
-        public long RoleId { get;}
-        public string PhoneNumber { get;}
+        public Task<bool> SendSmsAsync(string PhoneNumber, CancellationToken cancellationToken);
     }
 }

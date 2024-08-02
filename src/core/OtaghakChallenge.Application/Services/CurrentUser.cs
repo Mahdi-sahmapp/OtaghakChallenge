@@ -1,8 +1,10 @@
 ﻿using Microsoft.AspNetCore.Http;
 using OtaghakChallenge.Application.Interfaces;
+using OtaghakChallenge.Domain.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -20,5 +22,6 @@ namespace OtaghakChallenge.Application.Services
         public long UserId => long.Parse(_contextAccessor?.HttpContext?.User?.Claims.FirstOrDefault(a => a.Type == "UserId")?.Value ?? "0");
         public long RoleId => long.Parse(_contextAccessor?.HttpContext?.User?.Claims.FirstOrDefault(a => a.Type == "RoleId")?.Value ?? "0");
         public string Name => _contextAccessor?.HttpContext?.User?.Claims.FirstOrDefault(a => a.Type == "Name")?.Value ?? "";
+        string ICurrentUser.PhoneNumber => _contextAccessor?.HttpContext?.User?.Claims.FirstOrDefault(a => a.Type == "PhoneNumber")?.Value ?? "";
     }
 }

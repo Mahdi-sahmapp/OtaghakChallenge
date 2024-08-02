@@ -17,7 +17,7 @@ namespace OtaghakChallenge.Infrastructure
         {
             services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
             services.AddScoped<ITokenServices, TokenService>();
-
+            services.AddScoped<ISmsServices, SmsServices>();
             return services;
         }
     }
