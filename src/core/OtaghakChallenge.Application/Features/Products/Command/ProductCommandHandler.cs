@@ -25,8 +25,13 @@ namespace OtaghakChallenge.Application.Features.Products.Command
         }
 
         public async Task<int> Handle(ProductCommand request, CancellationToken cancellationToken)
-        {            
-            Product newProduct = _mapper.Map<Product>(request);
+        {
+            Product newProduct = new Product
+            {
+                Name = request.Name,
+                Description = request.Description,
+                Status = request.Status,
+            };
             await _repository.AddAsync(newProduct, cancellationToken);
             await _repository.ContextSaveChangesAsync(cancellationToken);
 

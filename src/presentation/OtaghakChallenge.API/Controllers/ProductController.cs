@@ -24,7 +24,7 @@ namespace OtaghakChallenge.API.Controllers
         {
             var Product = await _mediator.Send(new GetProductQuery());
 
-            return Ok();
+            return Ok(Product);
         }
 
         [HttpPost("AddNewProduct")]
@@ -35,7 +35,7 @@ namespace OtaghakChallenge.API.Controllers
 
             var productId = await _mediator.Send(productCommand);
 
-            return Ok(0);
+            return Ok(productId);
         }
     }
 }

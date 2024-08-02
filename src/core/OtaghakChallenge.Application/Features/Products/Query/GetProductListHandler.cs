@@ -26,6 +26,7 @@ namespace OtaghakChallenge.Application.Features.Products.Query
 
         public async Task<List<ProductDto>> Handle(GetProductQuery request, CancellationToken cancellationToken)
         {
+            var products1 = await _repository.GetAll().ToListAsync(cancellationToken);
             var products = await _repository.GetAll().Where(a=>a.Status == Status.Active).ToListAsync(cancellationToken);
 
             return _mapper.Map<List<ProductDto>>(products);
