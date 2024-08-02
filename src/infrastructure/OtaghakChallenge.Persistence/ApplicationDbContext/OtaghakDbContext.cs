@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using OtaghakChallenge.Domain.Entities;
+using OtaghakChallenge.Persistence.Extensions;
 
 namespace OtaghakChallenge.Persistence.ApplicationDbContext
 {
@@ -12,6 +13,11 @@ namespace OtaghakChallenge.Persistence.ApplicationDbContext
         {
 
         }
-        
+
+        protected override void OnModelCreating(ModelBuilder modelbuilder)
+        {
+            modelbuilder.ApplySoftDeleteQueryFilter();
+        }
+
     }
 }
