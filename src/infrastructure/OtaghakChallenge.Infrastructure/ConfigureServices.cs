@@ -14,10 +14,8 @@ namespace OtaghakChallenge.Infrastructure
     public static class ConfigureServices
     {
         public static IServiceCollection AddPersistanceServices(this IServiceCollection services)
-        {
-            services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
+        {            
             services.AddScoped<ITokenServices, TokenService>();
-            services.AddScoped<ISmsServices, SmsServices>();
             return services;
         }
     }

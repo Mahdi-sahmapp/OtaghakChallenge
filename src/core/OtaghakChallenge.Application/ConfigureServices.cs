@@ -3,6 +3,7 @@ using Microsoft.Extensions.DependencyInjection;
 using OtaghakChallenge.Application.Features.Products.Query;
 using OtaghakChallenge.Application.Interfaces;
 using OtaghakChallenge.Application.Services;
+using OtaghakChallenge.Infrastructure.Services;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -24,6 +25,7 @@ namespace OtaghakChallenge.Application
             services.AddAutoMapper(Assembly.GetExecutingAssembly());
             services.AddMediatR(x => x.RegisterServicesFromAssembly(typeof(ProductDto).Assembly));
             services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
+            services.AddScoped<ISmsServices, SmsServices>();
             return services;
         }
     }
